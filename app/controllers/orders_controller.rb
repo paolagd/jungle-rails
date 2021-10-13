@@ -5,7 +5,6 @@ class OrdersController < ApplicationController
     order_items = @order.line_items 
     #Includes the product information in @line_items
     @line_items = order_items.map { |item| { line_item: item, product: Product.find(item.product_id)}}   
-    
   end
 
   def create
