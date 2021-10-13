@@ -1,2 +1,21 @@
-<h1>Admin::Dashboard#show</h1>
-<p>Find me in app/views/admin/dashboard/show.html.erb</p>
+<section>
+
+  <header class="page-header">
+    <h1>Admin &raquo; Dashboard</h1>
+  </header>
+ 
+  <div class="panel panel-default products"> 
+    <dl class="dl-horizontal">
+      <br/>
+      <dt>Total products:</dt> 
+      <dd> <%= link_to @total_products, [:admin, :products] %></dd>
+
+      <br/>
+      <dt>Total categories:</dt> 
+      <dd><%= link_to @total_categories, [:admin, :products] %></dd>
+    </dl>
+  </div>
+
+  
+
+</section>
