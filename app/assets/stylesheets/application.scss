@@ -15,3 +15,10 @@ body {
 form.button_to {
   display: inline;
 }
+
+// Bootstrap adjustments
+.navbar-nav .signed_in {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-weight: bold;
+}
