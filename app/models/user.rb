@@ -11,5 +11,13 @@ class User < ActiveRecord::Base
     :minimum => 16,
     :too_short => "password is too short, must be at least %{count} characters"
   }  
- 
+  
+  def self.authenticate_with_credentials (email, password) 
+    user = User.find_by('LOWER(email) = ?', email.strip.downcase)
+
+    if user && user.authenticate(password)
+      user
+    end
+    
+  end
 end

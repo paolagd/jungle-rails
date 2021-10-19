@@ -1,19 +1,20 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-
+ 
   subject {
-    User.new({
+    User.new(
       first_name:  'Paola',
       last_name:  'Garcia',
       email: 'pacri@gmail.com',
       password: "this_is_a_pw_that_has_more_than_16_chars", 
       password_confirmation: "this_is_a_pw_that_has_more_than_16_chars" 
-    })
+    )
   }
 
-  describe 'Validations' do
 
+  describe 'Validations' do
+ 
     it "is valid with valid email, first name, last name, password and password_confirmation" do
       expect(subject).to be_valid
     end 
@@ -78,11 +79,62 @@ RSpec.describe User, type: :model do
   end
 
   describe '.authenticate_with_credentials' do
+
+    it "is nil when the credentials do not match" do
+      user = User.new({
+        first_name:  'Paola',
+        last_name:  'Garcia',
+        email: 'pacri@gmail.com',
+        password: "this_is_a_pw_that_has_more_than_16_chars", 
+        password_confirmation: "this_is_a_pw_that_has_more_than_16_chars" 
+      })
+      user.save
+      auth = User.authenticate_with_credentials('pacri@gmasil.com', "this_is_a_pw_that_has_more_than_16_chars")
+      expect(auth).to be_nil
+    end 
+
+    it "is user object when the credentials match" do
+      user = User.new({
+        first_name:  'Paola',
+        last_name:  'Garcia',
+        email: 'pacri@gmail.com',
+        password: "this_is_a_pw_that_has_more_than_16_chars", 
+        password_confirmation: "this_is_a_pw_that_has_more_than_16_chars" 
+      })
+      user.save
+      auth = User.authenticate_with_credentials('pacri@gmail.com', "this_is_a_pw_that_has_more_than_16_chars")
+      expect(auth).to eq(user)
+    end 
+
     context "with email with spaces" do
       it "still allows to log in" do
-        # ...
+        user = User.new({
+          first_name:  'Paola',
+          last_name:  'Garcia',
+          email: 'pacri@gmail.com',
+          password: "this_is_a_pw_that_has_more_than_16_chars", 
+          password_confirmation: "this_is_a_pw_that_has_more_than_16_chars" 
+        })
+        user.save
+        auth = User.authenticate_with_credentials(' pacri@gmail.com ', "this_is_a_pw_that_has_more_than_16_chars")
+        expect(auth).to eq(user)
+      end
+    end
+    
+    context "with email with random capital letters" do
+      it "still allows to log in" do
+        user = User.new({
+          first_name:  'Paola',
+          last_name:  'Garcia',
+          email: 'pacri@gmail.com',
+          password: "this_is_a_pw_that_has_more_than_16_chars", 
+          password_confirmation: "this_is_a_pw_that_has_more_than_16_chars" 
+        })
+        user.save
+        auth = User.authenticate_with_credentials('pacRi@gmAil.com', "this_is_a_pw_that_has_more_than_16_chars")
+        expect(auth).to eq(user)
       end
     end
   end
 
-end
+end 
