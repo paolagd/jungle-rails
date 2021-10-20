@@ -15,11 +15,11 @@ Below are listed my main contributions to this project:
 
 ### Landing page
  
-[Producs page](https://github.com/paolagd/jungle-rails/blob/master/docs/products.png?raw=true)
+!["Products page"](https://github.com/paolagd/jungle-rails/blob/master/docs/products.png?raw=true)
 
 ### Sneak Peak
 
-[A quick view](https://github.com/paolagd/jungle-rails/blob/master/docs/jungle.gif?raw=true)
+!["Jungle"](https://github.com/paolagd/jungle-rails/blob/master/docs/jungle.gif?raw=true)
   
 ## Additional Steps for Apple M1 Machines
 
