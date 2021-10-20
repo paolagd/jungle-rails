@@ -10,6 +10,16 @@ Below are listed my main contributions to this project:
 3. Added the Create category functionality
 4. Improved poduct listing page
 5. Added Testing specs
+
+## The App
+
+### Landing page
+ 
+[Producs page](https://github.com/paolagd/jungle-rails/blob/master/docs/products.png?raw=true)
+
+### Sneak Peak
+
+[A quick view](https://github.com/paolagd/jungle-rails/blob/master/docs/jungle.gif?raw=true)
   
 ## Additional Steps for Apple M1 Machines
 
