@@ -1,7 +1,16 @@
 # Jungle
 
-A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
+A mini e-commerce application built with Rails 4.2.
 
+Below are listed my main contributions to this project:
+ 
+1. Fixed multiple bugs
+2. Added User Authentication
+3. Created the Order Details Page
+3. Added the Create category functionality
+4. Improved poduct listing page
+5. Added Testing specs
+  
 ## Additional Steps for Apple M1 Machines
 
 1. Make sure that you are runnning Ruby 2.6.6 (`ruby -v`)
