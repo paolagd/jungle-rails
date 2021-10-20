@@ -19,9 +19,10 @@ RSpec.feature "Visitor adds item to shopping cart", type: :feature, js:true do
   scenario "They click on the Add button on a product and My Cart changes from 'My Cart (0)' to to 'My Cart (1)'" do
     visit root_path
  
+    expect(page).to have_content('My Cart (0)')   
+
     find('button', text: 'Add' , match: :first).click
   
-    expect(page).to have_content('My Cart (1)')  
-    save_and_open_screenshot 
+    expect(page).to have_content('My Cart (1)')   
   end
 end

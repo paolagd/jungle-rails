@@ -20,8 +20,7 @@ RSpec.feature "Visitor navigates to the product details page", type: :feature, j
   scenario "They navigate to the product details by clicking on the product" do
     visit root_path
 
-    find('article.product', match: :first).click
-    # commented out b/c it's for debugging only
+    find('a', text: 'Details' , match: :first).click 
     # save_and_open_screenshot 
       
     expect(page).to have_css '.products-show' 
